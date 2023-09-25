@@ -23,7 +23,7 @@ var (
 	stravaClientSecret      = flag.String("strava_clientsecret", "", "Strava Client Secret")
 	stravaAthleteId         = flag.Int64("strava_athleteid", 0, "Strava Athlete ID")
 	stravaVirtualRideGearId = flag.String("strava_virtualRide_gearid", "", "Strava Virtual Ride GearID")
-	debug                   = flag.Bool("debug", false, "Log debug level")
+	debug                   = flag.Bool("debug", true, "Log debug level")
 	syncAll                 = flag.Bool("sync_all", false, "Sync all activities")
 )
 
@@ -47,17 +47,17 @@ func main() {
 
 func sync(stravaService *strava.StravaService, komootService *komoot.KomootService, syncAll bool, stravaVirtualRideGearId string) {
 
-	log.Info("******************************* NEW SYNC LOOP ******************************")
+	log.Info("******************************* NEW SYNC LOOP v0.3 ******************************")
 
 	stravaActivities, err := stravaService.GetActivities(syncAll)
 	if err != nil {
-		log.Fatalf("STRAVA - GetActivities ERROR: %s", err)
+		log.Fatalf("STRAVA -- GetActivities ERROR: %s", err)
 		return
 	}
 
 	komootActivities, err := komootService.GetActivities(syncAll)
 	if err != nil {
-		log.Fatalf("KOMOOT - GetActivities ERROR: %s", err)
+		log.Fatalf("KOMOOT -- GetActivities ERROR: %s", err)
 		return
 	}
 

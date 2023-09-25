@@ -24,7 +24,7 @@ type KomootService struct {
 
 const komootSignInURL = "https://account.komoot.com/v1/signin"
 const komootTransferURL = "https://account.komoot.com/actions/transfer?type=signin"
-const komootApiURL = "https://www.komoot.de/api/v007"
+const komootApiURL = "https://www.komoot.com/api/v007"
 const statusFriends = "friends"
 
 const ActivityDateFormat1 = "2006-01-02T15:04:05.000Z"
