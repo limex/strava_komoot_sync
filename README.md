@@ -39,22 +39,25 @@ Flag "-sync_all"
 
 ## Run Docker Container
 ### ... via Dockerfile
+
+* Build and Run: 
+
         docker build --tag stravakomootsync:latest .
         docker run -d -p 8080:8080 --name stravakomootsync --restart unless-stopped -e 'KOMOOT_EMAIL=*****' -e 'KOMOOT_PWD=*****' -e 'KOMOOT_USERID=*****' -e 'STRAVA_CLIENTID=*****' -e 'STRAVA_CLIENTSECRET=*****' -e 'STRAVA_ATHLETEID=*****' -e 'STRAVA_VIRT_GEARID=*****' stravakomootsync
 
-Go to the Containers Tab in the Docker Desktop and select 'View Detail' at the "vertical hamburger".
-In the Logs Tab there will be are Link to Strava asking you to confirm the App Login.
-This will sync the Names of the latest 30 Strava Activities with corresponding Komoot Activities.
+* Go to the Containers Tab in the Docker Desktop and select 'View Detail' at the "vertical hamburger".
+* In the Logs Tab there will be are Link to Strava asking you to confirm the App Login. 
+* This will sync the Names of the latest 30 Strava Activities with corresponding Komoot Activities.
 Check Komoot to find your Activity Names updated.
-To update all Activities, add the parameter  
+* To update all Activities, add the parameter ...
 
         -e 'SYNC_ALL=true' 
 
-to aboves docker run command.
+  ... to aboves docker run command.
 
 ### ... via docker-compose and pre-build package from ghcr.io
 
-        ⚠️ :warning This option is not working in this fork. It uses a precompiled package from the original repo with an unreported error.
+WARNING!! This option is not working in this fork. It uses a precompiled package from the original repo with an error.
 
         cp .env.template .env
         vi .env
