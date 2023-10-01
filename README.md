@@ -1,7 +1,5 @@
 # StravaKomootSync
 
-[![Docker Image CI](https://github.com/aexel90/strava_komoot_sync/actions/workflows/docker-image.yml/badge.svg)](https://github.com/aexel90/strava_komoot_sync/actions/workflows/docker-image.yml)
-
 Activity Synchronization between Strava and Komoot.
 Synchronization direction: Strava --> Komoot
 
@@ -56,6 +54,8 @@ Check Komoot to find your Activity Names updated.
   ... to aboves docker run command.
 
 ### ... via docker-compose and pre-build package from ghcr.io
+
+[![Docker Image CI](https://github.com/aexel90/strava_komoot_sync/actions/workflows/docker-image.yml/badge.svg)](https://github.com/aexel90/strava_komoot_sync/actions/workflows/docker-image.yml)
 
 WARNING!! This option is not working in this fork. It uses a precompiled package from the original repo with an error.
 
